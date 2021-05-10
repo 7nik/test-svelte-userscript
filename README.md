@@ -1,3 +1,5 @@
+Testing project for creating a userscripts using Svelte and Rollup.
+
 # Get started
 
 Install the dependencies...
