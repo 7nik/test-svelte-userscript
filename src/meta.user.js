@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Calculator test
 // @namespace    7nik
-// @version      1.0
+// @version      2.0
 // @description  Adds a calculator to google home page
 // @homepageURL  https://github.com/7nik/test-svelte-userscript
 // @supportURL   https://github.com/7nik/test-svelte-userscript/issues
