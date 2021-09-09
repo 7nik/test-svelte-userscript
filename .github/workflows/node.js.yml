@@ -29,6 +29,6 @@ jobs:
       uses: ncipollo/release-action@v1.8.8
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
-        tag: v${{ githhub.run_number }}
-        name: release v${{ githhub.run_number }}
+        tag: v${{ github.run_number }}
+        name: release v${{ github.run_number }}
         artifact: build/calculator.user.js
