@@ -20,7 +20,7 @@ export default {
 		sourcemap: false,
 		format: 'iife',
 		name: 'calc',
-		file: 'build/calculator.user.js',
+		file: 'build/userscript.user.js',
 		banner: getMetablock,
 	},
 	plugins: [
