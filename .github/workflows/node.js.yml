@@ -22,13 +22,19 @@ jobs:
     - run: npm ci
     - run: npm run build --if-present
     - run: cp src/meta.user.js build/userscript.meta.js
+    - name: Get version
+      id: version
+      uses: notiz-dev/github-action-json-property@release
+      with:
+        path: package.json
+        prop_path: version
     - name: Create Release
       # You may pin to the exact commit or the version.
       # uses: ncipollo/release-action@10c84d509b28aae3903113151bfd832314964f2e
       uses: ncipollo/release-action@v1.8.8
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
-        tag: v${{ github.run_number }}
-        name: release v${{ github.run_number }}
+        tag: v${{ steps.version.outputs.prop }}-${{ github.run_number }}
+        name: release v${{ steps.version.outputs.prop }}-${{ github.run_number }}
         artifacts: build/*
         artifactErrorsFailBuild: true
