@@ -17,7 +17,7 @@ function getMetablock () {
 export default {
 	input: 'src/main.js',
 	output: {
-		sourcemap: false,
+		sourcemap: production ? false : "inline",
 		format: 'iife',
 		name: 'calc',
 		file: 'build/userscript.user.js',

@@ -5,7 +5,11 @@
 	export let action;
 	
 	function act () {
-		if ($currAction) currNum.set($currAction(+$secNum, +$currNum)); 
+		if ($currAction) {
+			const res = $currAction(+$secNum, +$currNum);
+			if (!Number.isFinite(res)) throw new Error(`Bad result: ${res}`);
+			currNum.set(res);
+		}
 		currAction.set(action);
 		if ($currNum) {
 			secNum.set($currNum);
